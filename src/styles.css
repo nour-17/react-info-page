@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --clr-light: #2b283a;
+  --clr-dark: #fff;
+  --nav-color: #21222a;
+  --bg-light: #fff;
+  --bg-dark: #282d35;
+  --fs-h1: 3rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+}
+body {
+  margin: 0%;
+  padding: 0%;
+  height: 100vh;
+  font-family: Inter, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--clr-dark);
+}
+.light-mode {
+  background-color: var(--bg-light);
+  color: var(--clr-light);
+}
+nav {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  background-color: var(--nav-color);
+  color: white;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+.nav--logo_text {
+  margin-right: auto;
+  color: #61dafb;
+  font-size: 1.5em;
+}
+.nav--icon {
+  width: 2em;
+  margin-right: 0.5em;
+  margin-left: 1.6em;
+}
+.nav--title {
+  margin-left: 1em;
+}
+/* main section */
+main {
+  padding: 4em 3em;
+  background-image: url("./images/Group.svg");
+  background-repeat: no-repeat;
+  background-position: right 75%;
+  background-size: 220px;
+}
+.main--title {
+  font-size: 3rem;
+  margin: 0;
+  letter-spacing: -0.05em;
+  animation: fade 1s ease forwards;
+}
+.main--list {
+  margin-top: 2em;
+  padding: 0 1.6em;
+  max-width: 500px;
+}
+.main--list > li {
+  font-size: 1.2em;
+  padding: 0.5em 0;
+  animation: comeinright 0.5s ease forwards;
+}
+.main--list > li::marker {
+  font-size: 1.4em;
+  color: #61dafb;
+}
+span {
+  background: linear-gradient(
+    90deg,
+    rgba(80, 74, 193, 1) 0%,
+    rgba(99, 99, 255, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* key frames */
+
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes comeinright {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ////////////////////////////////// */
+
+.label {
+  margin: 0 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30px;
+  padding: 10px;
+  width: 60px;
+  background-color: #3f3f3f;
+  border-radius: 50px;
+  position: relative;
+  transform: scale(1.2);
+}
+.ball {
+  background-color: #fff;
+  border-radius: 50%;
+  height: 22px;
+  width: 22px;
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  transform: translateX(0px);
+  transition: transform 20 0ms linear;
+}
+.checkbox {
+  position: absolute;
+  opacity: 0;
+}
+.checkbox:checked + .label .ball {
+  transform: translateX(29px);
+}
+.fa-sun {
+  color: yellow;
+}
